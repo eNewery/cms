@@ -1,0 +1,97 @@
+/* Reset CSS */
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Inter";
+}
+
+/* Reset CSS */
+
+
+/* Footer */
+
+.footerContainer{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+position: fixed;
+bottom: 10px;
+}
+.footerContent{
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #D0E7DF;
+gap: 1em;
+padding: 0.5em;
+border-radius: 0.2em;
+box-shadow:  0 1px 10px 0 #D0E7DF;
+
+}
+.footerBtn{
+    box-shadow: inset 0 1px 10px 0 #D0E7DF;
+height: 40px;
+width: 40px;
+background-color: white;
+border: none;
+cursor: pointer;
+transition:0.3s;
+border-radius: 4px;
+}
+.footerBtn img{
+    width: 24px;
+}
+.footerBtn.active {
+  background-color: #E3FFF4;
+}
+.footerBtn:hover{
+    background-color: #c4dfd7;
+    box-shadow: inset 0 1px 5px 0 #E3FFF4;
+    transition:0.3s;
+}
+
+.footerAside{
+    background-color: #D0E7DF;
+    width: 175px;
+    height: 100px;
+    padding: 0.5em;
+    animation: asideOpen 0.3s both;
+box-shadow:  0 1px 10px 0 #D0E7DF;
+border-top-right-radius:0.2em;
+border-top-left-radius:0.2em;
+}
+.footerAsideButtons{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.footerAsideButtons button{
+    height: 30%;
+    font-size: 12px;
+    border-radius: 1em;
+    border: none;
+    background-color: #E3FFF4;
+    color:#3B7F67;
+    cursor: pointer;
+    animation: asideButtonAppear 0.3s both;
+}
+@keyframes asideOpen {
+    0%{height: 0; padding: 0; opacity: 0;}
+    50%{opacity: 1;}
+    100%{height: 100px;}
+}
+
+@keyframes asideClosed {
+    0%{height: 100px;}
+    50%{opacity: 0;}
+    100%{height: 0; padding: 0; opacity: 0;}
+}
+@keyframes asideButtonAppear {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+/* Footer */
