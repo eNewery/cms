@@ -4,9 +4,237 @@
     padding: 0;
     margin: 0;
     font-family: "Inter";
+    box-sizing: border-box
+}
+
+.container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 5em;
 }
 
 /* Reset CSS */
+
+/* Header */
+
+.headerContainer{
+width: 100%;
+height: 50px;
+background-color: rgba(180,222,207,0.6);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.headerLogo{
+position: absolute;
+left: 0;
+}
+.headerLogo img{
+height: 32px;
+}
+.headerSearchContainer{
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+width: 50%;
+background-color: white;
+height: 32px;
+display: flex;
+align-items: center;
+box-shadow: 0 4px 7px 0 #00000014;
+}
+.headerInput{
+background:none;
+border: none;
+width: 100%;
+outline: none;
+padding: 0 0 0 1em;
+}
+
+.headerSearchContainer .headerSearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 3px;
+    height: 32px;
+    width: 36px;
+    background-color: #B4DECF;
+border-bottom-right-radius: 0.3em;
+border-top-right-radius: 0.3em;
+cursor: pointer;
+}
+.headerSearchContainer .headerSearch img{
+height: 24px;
+}
+
+/* Header */
+
+/* Modal */
+
+.modalContainer{
+position: absolute;
+z-index: 100;
+bottom: 0;
+height: 100vh;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.564);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.modalContent {
+    background-color: #ffffff;
+width: 80%;
+    padding: 2rem 1.5rem;
+    border-radius: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+  .modalContent .modalTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .modalContent img {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .modalContent div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .modalContent div h2 {
+    color: #3B7F67;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .modalContent div input {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    outline: none;
+  }
+  
+  .modalContent div input:placeholder-shown{
+color: #BFBFBF;
+font-weight: bold;
+font-size: 12px;
+  }
+
+  .modalContent div button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #2c3440;
+    color: #3B7F67;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .modalContent div button:hover {
+    background-color: #1e252e;
+  }
+/* Modal */
+
+
+/* Page Title */
+
+.pageTitleContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.pageTitleContainer h2{
+    font-size: 16px;
+    font-weight: 300;
+    color: #3B7F67;
+    background-color: #B4DECF;
+    padding: 0.2em 2em 0.2em 2em;
+    border-radius: 0.2em;
+}
+
+/* Page Title */
+
+/* Dashboard */
+
+.dashboardContainer{
+    width: 50%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 1em;
+} 
+.dashboardTitle{
+color: #3B7F67;
+font-size: 48px;
+text-align: center;
+} 
+.dashboardSubtitle{
+color: #B8B8B8;
+font-size: 24px;
+font-weight: bold;
+text-align: center;
+} 
+.dashboardBtnContainer{
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+} 
+.dashboardBtnBuy{
+width: 200px;
+height: 40px;
+background-color: #B4DECF;
+color: #3B7F67;
+border:none;
+border-radius:0.3em;
+cursor:pointer;
+font-weight:300;
+font-size: 20px;
+} 
+.dashboardBtnProj{
+    width: 200px;
+height: 40px;
+background-color: #374152;
+color: #3B7F67;
+border:none;
+border-radius:0.3em;
+cursor:pointer;
+font-weight:300;
+font-size: 20px;
+}
+
+.dashboardSkipBtn{
+    text-decoration: underline;
+    color: #C3C3C3;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dashboard */
+
 
 
 /* Footer */
@@ -33,8 +261,8 @@ box-shadow:  0 1px 10px 0 #D0E7DF;
 }
 .footerBtn{
     box-shadow: inset 0 1px 10px 0 #D0E7DF;
-height: 40px;
-width: 40px;
+height: 50px;
+width: 50px;
 background-color: white;
 border: none;
 cursor: pointer;
@@ -55,7 +283,7 @@ border-radius: 4px;
 
 .footerAside{
     background-color: #D0E7DF;
-    width: 175px;
+    width: 220px;
     height: 100px;
     padding: 0.5em;
     animation: asideOpen 0.3s both;
@@ -95,3 +323,49 @@ border-top-left-radius:0.2em;
     100%{opacity: 1;}
 }
 /* Footer */
+
+
+/* Media Queries */
+
+/* Media 800 */
+
+@media (max-width:800px) {
+    .dashboardContainer{
+        width: 90%;
+    }
+    .dashboardTitle{
+        font-size: 32px;
+    }
+.dashboardSubtitle{
+    font-size: 21px;
+}
+    .dashboardBtnContainer{
+        flex-direction: column; /* Que los botones estén uno abajo del otro */
+        gap: 1em;
+        align-items: center;
+    }
+    .dashboardBtnBuy, .dashboardBtnProj{
+        width: 100%; /* Que ocupen todo el ancho disponible */
+        max-width: 300px; /* Máximo para que no se deformen en tablets */
+    }
+  }
+
+/* Media 800 */
+
+/* Media 500 */
+
+@media (max-width:800px) {
+
+.modalContent{
+height: 100%;
+width: 100%;
+}
+
+.modalContent div{
+height: 100%;
+}
+}
+/* Media 500 */
+
+
+/* Media Queries */

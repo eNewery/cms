@@ -1,10 +1,12 @@
 "use client"
 import { useEffect, useState, useRef } from "react"
+import { useUser } from "./context";
 
 export default function Footer() {
     const [activePanel, setActivePanel] = useState(null)
     const [panelContent, setPanelContent] = useState(null)
     const [isClosing, setIsClosing] = useState(false)
+    const {setPage, isModal, setIsModal, modalContent, setModalContent} = useUser()
 
 
     function togglePanel(panelName) {
@@ -22,18 +24,21 @@ footerAside.style.animation = "asideClosed 0.3s both"
             setPanelContent(panelName)
         }
     }
-
+function setModal(modalCont) {
+    setIsModal(true)
+    setModalContent(modalCont)
+}
     return (
         <div className="footerContainer">
             {activePanel && (
                 <div className={`footerAside ${isClosing ? "asideClosing" : ""}`}>
-                    {panelContent === "category" && <div className="footerAsideButtons"><button>Language Dashboard</button><button>Category Dashboard</button><button>Question Dashboard</button></div>}
-                    {panelContent === "categoryadd" && <div className="footerAsideButtons"><button>Create Language</button><button>Create Category</button><button>Make a Question</button></div>}
-                    {panelContent === "profile" && <div className="footerAsideButtons"><button>Profile</button><button>Account Settings</button><button>Log Out</button></div>}
+                    {panelContent === "category" && <div className="footerAsideButtons"><button onClick={() => setPage("Language")}>Language Dashboard</button><button onClick={() => setPage("Category")}>Category Dashboard</button><button onClick={() => setPage("Question")}>Question Dashboard</button></div>}
+                    {panelContent === "categoryadd" && <div className="footerAsideButtons"><button onClick={() => setModal("languageM")}>Create Language</button><button onClick={() => setModal("categoryM")}>Create Category</button><button onClick={() => setModal("questionM")}>Make a Question</button></div>}
+                    {panelContent === "profile" && <div className="footerAsideButtons"><button onClick={() => setPage("Profile")}>Profile</button><button>Account Settings</button><button>Log Out</button></div>}
                 </div>
             )}
             <div className="footerContent">
-                <button className="footerBtn">
+                <button onClick={() => setPage("Dashboard")} className="footerBtn">
                     <img src="./home.png" alt="" />
                 </button>
                 <button className={`footerBtn ${activePanel === "category" ? "active" : ""}`} onClick={() => togglePanel("category")}>
